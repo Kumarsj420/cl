@@ -14,10 +14,10 @@
   --color-sky-100: #e3f0f8;
   --color-sea: #0b6498;
   --color-sea-deep: #084c75;
-  /* Orange accent. Fills take ink text (5.1:1); white text on it would fail contrast.
+  /* Light orange accent. Fills take ink text (6.7:1); white text on it would fail contrast.
      accent-ink is the orange for text on white or cream (5.2:1 and 4.9:1). */
-  --color-accent: #ff7a1a;
-  --color-accent-hover: #ff8f3d;
+  --color-accent: #ffa24d;
+  --color-accent-hover: #ff9433;
   --color-accent-ink: #c2410c;
   --color-whatsapp: #0f7a3f;
   --color-whatsapp-deep: #0b5f31;
