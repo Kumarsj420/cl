@@ -15,7 +15,7 @@ const nav = [
 
 function TopBar() {
   return (
-    <div className="bg-yolk text-sm">
+    <div className="bg-accent text-sm">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-x-5 px-4 sm:px-6">
         <div className="flex items-center gap-x-5">
           <a href={`tel:${site.phoneHref}`} className="inline-flex min-h-11 items-center gap-1.5 font-semibold hover:underline">
@@ -41,7 +41,7 @@ export function Header() {
       <TopBar />
       <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-x-6 px-4 py-1 sm:px-6 lg:flex-nowrap lg:py-2">
         <Link href="/" className="flex min-h-11 items-center gap-2 font-display text-lg font-bold">
-          <Send aria-hidden="true" className="size-5 -rotate-12 fill-yolk text-ink" />
+          <Send aria-hidden="true" className="size-5 -rotate-12 fill-accent text-ink" />
           {site.name}
         </Link>
         <EnquiryButton className="btn btn-primary order-2 hidden lg:order-3 lg:inline-flex">Enquire now</EnquiryButton>
@@ -64,7 +64,7 @@ export function Header() {
 /** The yellow "we're here to help" strip that closes every page. */
 export function HelpStrip({ title = "Planning a Himachal trip?", destination }: { title?: string; destination?: string }) {
   return (
-    <section className="bg-yolk">
+    <section className="bg-accent">
       <div className="mx-auto grid max-w-6xl gap-6 px-4 py-10 sm:px-6 lg:grid-cols-[1.2fr_1fr_1fr_auto] lg:items-center">
         <div>
           <h2 className="text-2xl font-bold">{title}</h2>
@@ -102,7 +102,7 @@ export function Footer() {
           {site.hours ? <p className="mt-3 text-sm opacity-90">{site.hours}</p> : null}
         </div>
         <nav aria-label="Destinations" className="md:col-span-2">
-          <p className="font-display font-semibold text-yolk">Destinations</p>
+          <p className="font-display font-semibold text-accent">Destinations</p>
           <ul className="mt-2 grid grid-cols-2 gap-x-4">
             {places.map((d) => (
               <li key={d.slug}><Link href={`/${d.slug}`} className="inline-flex min-h-11 items-center hover:underline">{d.name}</Link></li>
@@ -110,7 +110,7 @@ export function Footer() {
           </ul>
         </nav>
         <nav aria-label="Trip types">
-          <p className="font-display font-semibold text-yolk">Trip types</p>
+          <p className="font-display font-semibold text-accent">Trip types</p>
           <ul className="mt-2">
             {themes.map((d) => (
               <li key={d.slug}><Link href={`/${d.slug}`} className="inline-flex min-h-11 items-center hover:underline">{d.slug === "himachal-tour-packages" ? "All Himachal packages" : d.name}</Link></li>

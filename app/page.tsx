@@ -88,7 +88,7 @@ export default function HomePage() {
           <ul className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {services.map(({ icon: Icon, title, text }) => (
               <li key={title} className="card bg-cream p-6">
-                <span className="inline-flex size-12 items-center justify-center rounded-full bg-yolk"><Icon aria-hidden="true" className="size-6" /></span>
+                <span className="inline-flex size-12 items-center justify-center rounded-full bg-accent"><Icon aria-hidden="true" className="size-6" /></span>
                 <h3 className="mt-4 text-lg font-semibold">{title}</h3>
                 <p className="mt-1 text-ink-soft">{text}</p>
               </li>
@@ -101,7 +101,7 @@ export default function HomePage() {
         <div className="mx-auto grid max-w-6xl gap-8 px-4 sm:px-6 md:grid-cols-3">
           <h2 className="text-section md:col-span-3">Why travel with {site.name}</h2>
           {promises.map((promise) => (
-            <div key={promise.title} className="border-l-4 border-yolk pl-4">
+            <div key={promise.title} className="border-l-4 border-accent pl-4">
               <h3 className="text-lg font-semibold">{promise.title}</h3>
               <p className="mt-1 text-ink-soft">{promise.text}</p>
             </div>

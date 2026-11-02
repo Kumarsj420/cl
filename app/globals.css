@@ -14,9 +14,11 @@
   --color-sky-100: #e3f0f8;
   --color-sea: #0b6498;
   --color-sea-deep: #084c75;
-  --color-yolk: #ffc72c;
-  --color-yolk-deep: #f2b600;
-  --color-yolk-ink: #8a5a00;
+  /* Orange accent. Fills take ink text (5.1:1); white text on it would fail contrast.
+     accent-ink is the orange for text on white or cream (5.2:1 and 4.9:1). */
+  --color-accent: #ff7a1a;
+  --color-accent-hover: #ff8f3d;
+  --color-accent-ink: #c2410c;
   --color-whatsapp: #0f7a3f;
   --color-whatsapp-deep: #0b5f31;
   --color-mint: #d9f4e4;
@@ -38,20 +40,20 @@
   h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; letter-spacing: -0.015em; line-height: 1.15; }
   p { text-wrap: pretty; }
   :focus-visible { outline: 3px solid var(--color-sea); outline-offset: 2px; border-radius: var(--radius-sm); }
-  ::selection { background: var(--color-yolk); }
+  ::selection { background: var(--color-accent); }
 }
 
 @layer components {
   .text-hero { font-size: clamp(2.25rem, 1.5rem + 3.6vw, 4rem); font-weight: 700; line-height: 1.08; }
   .text-section { font-size: clamp(1.625rem, 1.3rem + 1.5vw, 2.5rem); font-weight: 700; }
   /* A handwritten line above a few home page headings, as on the reference sites. Decorative, so it stays short. */
-  .kicker { font-family: var(--font-script); font-size: 1.75rem; line-height: 1; color: var(--color-yolk-ink); }
-  .on-photo .kicker { color: var(--color-yolk); }
+  .kicker { font-family: var(--font-script); font-size: 1.75rem; line-height: 1; color: var(--color-accent-ink); }
+  .on-photo .kicker { color: var(--color-accent); }
 
   .btn { display: inline-flex; min-height: 2.75rem; align-items: center; justify-content: center; gap: 0.5rem; border-radius: var(--radius-sm); padding: 0.5rem 1.25rem; font-weight: 600; line-height: 1.2; transition: transform 160ms var(--ease-bounce), background-color 160ms; cursor: pointer; touch-action: manipulation; }
   .btn:active { transform: scale(0.97); }
-  .btn-primary { background: var(--color-yolk); color: var(--color-ink); }
-  .btn-primary:hover { background: var(--color-yolk-deep); }
+  .btn-primary { background: var(--color-accent); color: var(--color-ink); }
+  .btn-primary:hover { background: var(--color-accent-hover); }
   .btn-whatsapp { background: var(--color-whatsapp); color: #fff; }
   .btn-whatsapp:hover { background: var(--color-whatsapp-deep); }
   .btn-outline { box-shadow: inset 0 0 0 2px var(--color-ink); color: var(--color-ink); background: transparent; }

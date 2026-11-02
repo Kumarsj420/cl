@@ -131,9 +131,9 @@ export default async function DestinationPage({ params }: Props) {
           <h2 className="text-section">{d.placesTitle}</h2>
           <dl className="mt-8 grid gap-x-10 gap-y-7 md:grid-cols-2">
             {d.places.map((place) => (
-              <div key={place.name} className="border-l-4 border-yolk pl-4">
+              <div key={place.name} className="border-l-4 border-accent pl-4">
                 <dt className="font-display text-lg font-semibold">
-                  {place.href ? <Link className="inline-flex min-h-11 items-center underline decoration-yolk-deep decoration-2 underline-offset-4 hover:text-sea" href={place.href}>{place.name}</Link> : place.name}
+                  {place.href ? <Link className="inline-flex min-h-11 items-center underline decoration-accent-hover decoration-2 underline-offset-4 hover:text-sea" href={place.href}>{place.name}</Link> : place.name}
                 </dt>
                 <dd className="mt-1 text-ink-soft">{place.text}</dd>
               </div>
@@ -148,7 +148,7 @@ export default async function DestinationPage({ params }: Props) {
           <ol className="mt-8 grid gap-8 md:grid-cols-3">
             {steps.map((step, index) => (
               <li key={step.title}>
-                <span aria-hidden="true" className="inline-flex size-10 items-center justify-center rounded-full bg-yolk font-display font-semibold">{index + 1}</span>
+                <span aria-hidden="true" className="inline-flex size-10 items-center justify-center rounded-full bg-accent font-display font-semibold">{index + 1}</span>
                 <h3 className="mt-3 text-lg font-semibold">{step.title}</h3>
                 <p className="mt-1 text-ink-soft">{step.text}</p>
               </li>

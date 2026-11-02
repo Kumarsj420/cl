@@ -58,7 +58,7 @@ export default function AboutPage() {
           <h2 className="text-section">How we work</h2>
           <div className="mt-8 grid gap-x-10 gap-y-8 md:grid-cols-2">
             {values.map((value) => (
-              <div key={value.title} className="border-l-4 border-yolk pl-4">
+              <div key={value.title} className="border-l-4 border-accent pl-4">
                 <h3 className="text-lg font-semibold">{value.title}</h3>
                 <p className="mt-1 text-ink-soft">{value.text}</p>
               </div>

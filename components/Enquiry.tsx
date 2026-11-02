@@ -180,22 +180,22 @@ export function EnquiryForm({
 
       <div>
         <label htmlFor={`${id}-name`} className="font-semibold">Your name <span className="font-normal text-ink-soft">(required)</span></label>
-        <input {...field("name")} type="text" autoComplete="name" required />
+        <input {...field("name")} type="text" autoComplete="name" placeholder="e.g. Rahul Sharma" required />
         {errorText("name")}
       </div>
       <div>
         <label htmlFor={`${id}-phone`} className="font-semibold">Phone number <span className="font-normal text-ink-soft">(required)</span></label>
-        <input {...field("phone")} type="tel" inputMode="tel" autoComplete="tel" required />
+        <input {...field("phone")} type="tel" inputMode="tel" autoComplete="tel" placeholder="e.g. 98765 43210" required />
         {errorText("phone")}
       </div>
       <div className="grid grid-cols-5 gap-3 sm:gap-4">
         <div className="col-span-3">
           <label htmlFor={`${id}-when`} className="font-semibold">Travel dates</label>
-          <input {...field("when")} type="text" autoComplete="off" placeholder="Mid December" />
+          <input {...field("when")} type="text" autoComplete="off" placeholder="e.g. Mid December" />
         </div>
         <div className="col-span-2">
           <label htmlFor={`${id}-travellers`} className="font-semibold">Travellers</label>
-          <input {...field("travellers")} type="text" inputMode="numeric" autoComplete="off" />
+          <input {...field("travellers")} type="text" inputMode="numeric" autoComplete="off" placeholder="e.g. 4" />
           {errorText("travellers")}
         </div>
       </div>
@@ -203,12 +203,12 @@ export function EnquiryForm({
       <>
       <div>
         <label htmlFor={`${id}-email`} className="font-semibold">Email</label>
-        <input {...field("email")} type="email" autoComplete="email" spellCheck={false} />
+        <input {...field("email")} type="email" autoComplete="email" spellCheck={false} placeholder="e.g. name@gmail.com" />
         {errorText("email")}
       </div>
       <div>
         <label htmlFor={`${id}-message`} className="font-semibold">Anything we should know?</label>
-        <textarea {...field("message")} rows={2} maxLength={1000} />
+        <textarea {...field("message")} rows={2} maxLength={1000} placeholder="Pickup city, hotel type, food preferences" />
       </div>
       </>
       )}
