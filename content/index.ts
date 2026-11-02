@@ -1,25 +1,23 @@
-import { andaman } from "./destinations/andaman";
-import { bali } from "./destinations/bali";
-import { dubai } from "./destinations/dubai";
+import { bir } from "./destinations/bir";
+import { dalhousie } from "./destinations/dalhousie";
+import { dharamshala } from "./destinations/dharamshala";
 import { family } from "./destinations/family";
-import { goa } from "./destinations/goa";
 import { himachal } from "./destinations/himachal";
 import { honeymoon } from "./destinations/honeymoon";
-import { kashmir } from "./destinations/kashmir";
-import { kerala } from "./destinations/kerala";
-import { ladakh } from "./destinations/ladakh";
-import { meghalaya } from "./destinations/meghalaya";
-import { rajasthan } from "./destinations/rajasthan";
-import { sikkimDarjeeling } from "./destinations/sikkim-darjeeling";
-import { thailand } from "./destinations/thailand";
-import { uttarakhand } from "./destinations/uttarakhand";
+import { jibhi } from "./destinations/jibhi";
+import { kasol } from "./destinations/kasol";
+import { kinnaur } from "./destinations/kinnaur";
+import { manali } from "./destinations/manali";
+import { shangarh } from "./destinations/shangarh";
+import { shimla } from "./destinations/shimla";
+import { shimlaManali } from "./destinations/shimla-manali";
+import { spiti } from "./destinations/spiti";
 import type { Destination } from "./types";
 
 /** Every landing page on the site. Add a destination file, list it here and the page, sitemap and menus follow. */
 export const destinations: Destination[] = [
-  kashmir, himachal, kerala, goa, ladakh, rajasthan, andaman, uttarakhand, sikkimDarjeeling, meghalaya,
-  bali, thailand, dubai,
-  honeymoon, family,
+  shimla, manali, shimlaManali, dharamshala, dalhousie, jibhi, spiti, shangarh, bir, kasol, kinnaur,
+  himachal, honeymoon, family,
 ];
 
 export const getDestination = (slug: string) => destinations.find((d) => d.slug === slug);

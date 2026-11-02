@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function PrivacyPage() {
   return (
     <article className="mx-auto max-w-2xl space-y-4 px-4 pt-8 pb-16 text-ink-soft sm:px-6 md:pt-16">
-      <h1 className="text-landing text-ink">Privacy policy</h1>
+      <h1 className="text-hero text-ink">Privacy policy</h1>
       <h2 className="pt-4 text-2xl font-bold text-ink">What we collect</h2>
       <p>When you send an enquiry, we receive what you enter: your name, phone number, travel plans and, if you add it, your email and message. We also note which page you sent it from.</p>
       <h2 className="pt-4 text-2xl font-bold text-ink">How we use it</h2>

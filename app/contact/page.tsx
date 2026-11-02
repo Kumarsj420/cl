@@ -20,8 +20,9 @@ export default function ContactPage() {
   return (
     <section className="mx-auto grid max-w-6xl gap-12 px-4 pt-8 pb-16 sm:px-6 md:grid-cols-2 md:pt-16 md:pb-24">
       <div>
-        <h1 className="text-landing">Say hello</h1>
-        <p className="mt-5 max-w-md text-lg text-ink-soft">The quickest way is a phone call or a WhatsApp message. If you would rather write, send the form and we will call you back.</p>
+        <p className="kicker">Contact us</p>
+        <h1 className="text-hero mt-2">Say hello</h1>
+        <p className="mt-5 max-w-md text-lg text-ink-soft">The quickest way to plan your Himachal trip is a phone call or a WhatsApp message. If you would rather write, send the form and we will call you back.</p>
         <dl className="mt-8 grid gap-5">
           {rows.map(({ icon: Icon, label, value, href }) => (
             <div key={label}>
@@ -35,7 +36,7 @@ export default function ContactPage() {
           ))}
         </dl>
       </div>
-      <div className="rounded-lg bg-sky-50 p-5 sm:p-7">
+      <div className="card bg-cream p-5 sm:p-7">
         <h2 className="text-2xl font-bold">Send an enquiry</h2>
         <EnquiryForm contact={{ phone: site.phone, phoneHref: site.phoneHref }} className="mt-5" />
       </div>

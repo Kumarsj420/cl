@@ -5,8 +5,8 @@ const fullMonths = ["January", "February", "March", "April", "May", "June", "Jul
 
 const style: Record<MonthRating, { label: string; cell: string; mark: string }> = {
   best: { label: "Best", cell: "bg-yolk", mark: "●" },
-  okay: { label: "Okay", cell: "bg-sky-100", mark: "◐" },
-  avoid: { label: "Not ideal", cell: "bg-paper ring-1 ring-inset ring-line", mark: "○" },
+  okay: { label: "Okay", cell: "bg-paper ring-1 ring-inset ring-yolk-deep", mark: "◐" },
+  avoid: { label: "Not ideal", cell: "bg-cream text-ink-soft", mark: "○" },
 };
 
 /** A year at a glance. Each month carries a symbol as well as a colour. */

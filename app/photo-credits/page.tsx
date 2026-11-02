@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function PhotoCreditsPage() {
   return (
     <article className="mx-auto max-w-3xl px-4 pt-8 pb-16 sm:px-6 md:pt-16">
-      <h1 className="text-landing">Photo credits</h1>
+      <h1 className="text-hero">Photo credits</h1>
       <p className="mt-4 text-ink-soft">These photos come from Wikimedia Commons under the licences shown. They are resized and cropped to fit this site.</p>
       <ul className="mt-8 divide-y divide-line border-y border-line">
         {Object.values(photos).map((photo) => (

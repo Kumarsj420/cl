@@ -75,16 +75,21 @@ type Status = "idle" | "sending" | "sent" | "failed" | "rate_limited";
 const fieldClass =
   "mt-1 block min-h-11 w-full rounded-md border border-field bg-paper px-3 py-2 text-base text-ink placeholder:text-ink-soft aria-invalid:border-danger aria-invalid:border-2";
 
-/** The form itself. Used inside the dialog and directly on the contact page. */
+/**
+ * The form itself. Used inside the dialog, in page heroes and on the contact page.
+ * `short` drops the optional email and message fields so the form fits beside a hero.
+ */
 export function EnquiryForm({
   topic = {},
   contact,
   onDone,
+  short = false,
   className = "",
 }: {
   topic?: EnquiryTopic;
   contact: ContactDetails;
   onDone?: () => void;
+  short?: boolean;
   className?: string;
 }) {
   const id = useId();
@@ -194,6 +199,8 @@ export function EnquiryForm({
           {errorText("travellers")}
         </div>
       </div>
+      {short ? null : (
+      <>
       <div>
         <label htmlFor={`${id}-email`} className="font-semibold">Email</label>
         <input {...field("email")} type="email" autoComplete="email" spellCheck={false} />
@@ -203,6 +210,8 @@ export function EnquiryForm({
         <label htmlFor={`${id}-message`} className="font-semibold">Anything we should know?</label>
         <textarea {...field("message")} rows={2} maxLength={1000} />
       </div>
+      </>
+      )}
 
       {/* Left empty by people, filled in by bots */}
       <div className="absolute size-px overflow-hidden opacity-0" aria-hidden="true">

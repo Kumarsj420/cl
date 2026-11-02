@@ -1,8 +1,11 @@
-# Tour and travel website
+# Bhart Tour & Travels website
 
-Next.js site with a home page, about, contact and 15 destination landing pages. Each landing
-page has package cards with a call button and an enquiry form in a dialog. Enquiries are emailed
-through Hostinger SMTP.
+Himachal travel site in Next.js: a home page, about, contact and 14 landing pages (11 places and
+3 trip types). Every page has an enquiry form in the hero, and each package card has Enquire,
+WhatsApp and Call buttons. Enquiries are emailed through SMTP.
+
+The earlier multi-destination design (postage stamps and boarding-pass cards) is kept as a
+reusable template on the `template-stamps` branch and the `template-stamps-v1` tag.
 
 ## Run it
 
@@ -17,20 +20,22 @@ Without SMTP settings, a development server prints enquiries to the terminal ins
 
 | What | File |
 | --- | --- |
-| Company name, phone, email, address, hours | `content/site.ts` |
+| Company name, phone, WhatsApp, email, address, hours | `content/site.ts` |
+| Services listed on the home page | `app/page.tsx` (`services`) |
 | A destination's text, packages, month guide and FAQs | `content/destinations/*.ts` |
 | Add or remove a landing page | Add the file, then list it in `content/index.ts` |
 | Photos, alt text and credits | `content/photos.ts`, files in `public/photos/` |
 | Colours, fonts and shapes | `app/globals.css` |
 
-**Prices:** add `price: 24999` to a package to show "From ₹24,999 per person, before taxes". Without
-it, the card shows "Price on request".
+**Prices:** add `price: 24999` to a package to show "From ₹24,999 per person". Without it, the card
+shows "Price on request".
 
 ## Before launch
 
 1. Add the office address, hours, `foundedYear` and `licence` in `content/site.ts`. Each stays hidden until filled in.
 2. Have the client check every package, inclusion and promise. The routes and travel facts are
-   researched drafts, and the service promises on the home and about pages need their agreement.
+   researched drafts. The service list and the promises on the home and about pages need their
+   agreement, because they describe what the client will do.
 3. Check `app/privacy/page.tsx` with the client.
 4. Set the environment variables below.
 

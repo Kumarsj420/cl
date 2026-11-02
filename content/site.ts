@@ -4,7 +4,7 @@
  */
 export const site = {
   name: "Bhart Tour & Travels",
-  tagline: "Holidays planned by people you can call",
+  tagline: "Himachal holidays planned by people you can call",
   phone: "+91 86298 75195",
   phoneHref: "+918629875195",
   // WhatsApp chat link, digits only with country code. Leave empty to hide it.
@@ -18,6 +18,10 @@ export const site = {
   licence: "", // e.g. tourism board or IATA registration number
   socials: [] as { label: string; href: string }[],
 };
+
+/** A wa.me link, with an optional message already typed in. */
+export const whatsappLink = (text?: string) =>
+  `https://wa.me/${site.whatsapp}${text ? `?text=${encodeURIComponent(text)}` : ""}`;
 
 export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ?? "";
 export const absoluteUrl = (path: string) => `${siteUrl || "http://localhost:3002"}${path}`;

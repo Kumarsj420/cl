@@ -1,12 +1,10 @@
 import type { PhotoKey } from "./photos";
 
-export type Inclusion = "flights" | "hotel" | "meals" | "cab" | "sightseeing" | "activity" | "ferry" | "houseboat" | "visa";
-export type Mood = "snow" | "mountains" | "beach" | "culture" | "wildlife" | "honeymoon" | "family" | "abroad";
+export type Inclusion = "hotel" | "meals" | "cab" | "volvo" | "sightseeing" | "activity" | "camping" | "guide";
 export type MonthRating = "best" | "okay" | "avoid";
 
 export type TripPackage = {
   title: string;
-  tier: "Budget" | "Comfort" | "Premium";
   photo: PhotoKey;
   /** Stops in travel order, with nights in each. The duration is worked out from this. */
   stops: [place: string, nights: number][];
@@ -19,17 +17,17 @@ export type TripPackage = {
 export type Destination = {
   slug: string;
   name: string;
-  kind: "india" | "abroad" | "theme";
-  moods: Mood[];
+  /** "place" pages are destinations, "theme" pages are trip types like honeymoon. */
+  kind: "place" | "theme";
   blurb: string;
   metaTitle: string;
   metaDescription: string;
   heading: string;
   intro: string;
   heroPhoto: PhotoKey;
-  stampPhoto: PhotoKey;
+  cardPhoto: PhotoKey;
   facts: { label: string; value: string }[];
-  /** January to December. Theme pages cover many places, so they leave this out. */
+  /** January to December. */
   months?: { ratings: MonthRating[]; note: string };
   placesTitle: string;
   places: { name: string; text: string; href?: string }[];
