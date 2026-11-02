@@ -14,14 +14,13 @@
   --color-sky-100: #e3f0f8;
   --color-sea: #0b6498;
   --color-sea-deep: #084c75;
-  /* Accent is Tailwind rose-500 with white text, as the client asked. White on rose-500 is
-     3.75:1, which passes WCAG AA only for large or bold text (about 19px bold and up) and icons.
-     accent-ink (rose-700) is for rose text on white or cream; accent-light (rose-400) for rose
-     text on navy or over photos. */
-  --color-accent: oklch(64.5% 0.246 16.439);
-  --color-accent-hover: oklch(58.6% 0.253 17.585);
-  --color-accent-ink: oklch(51.4% 0.222 16.935);
-  --color-accent-light: oklch(71.2% 0.194 13.428);
+  /* Accent is Tailwind cyan-700 with white text (5.3:1, passes WCAG AA), hovering to cyan-800.
+     accent-ink is for cyan text on white or cream (5.3:1 and 5.0:1); accent-light (cyan-300) is
+     for cyan text on navy or over photos (9.2:1), where cyan-700 would be too dark. */
+  --color-accent: oklch(52% 0.105 223.128);
+  --color-accent-hover: oklch(45% 0.085 224.283);
+  --color-accent-ink: oklch(52% 0.105 223.128);
+  --color-accent-light: oklch(86.5% 0.127 207.078);
   --color-on-accent: #ffffff;
   --color-whatsapp: #0f7a3f;
   --color-whatsapp-deep: #0b5f31;

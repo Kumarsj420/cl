@@ -80,7 +80,7 @@ export function HelpStrip({ title = "Planning a Himachal trip?", destination }: 
             <span><span className="block text-sm font-normal">WhatsApp</span>Chat with us</span>
           </a>
         ) : null}
-        <EnquiryButton topic={{ destination }} className="btn bg-ink text-paper hover:bg-sea-deep">Get a free quote</EnquiryButton>
+        <EnquiryButton topic={{ destination }} className="btn bg-paper text-accent-ink hover:bg-cream">Get a free quote</EnquiryButton>
       </div>
     </section>
   );
