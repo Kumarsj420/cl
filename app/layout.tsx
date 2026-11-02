@@ -34,7 +34,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             url: absoluteUrl("/"),
             telephone: site.phone,
             email: site.email,
-            address: site.address,
+            ...(site.address ? { address: site.address } : {}),
           }}
         />
         <EnquiryProvider contact={{ phone: site.phone, phoneHref: site.phoneHref }}>

@@ -28,7 +28,7 @@ it, the card shows "Price on request".
 
 ## Before launch
 
-1. Replace the placeholders in `content/site.ts`. Set `foundedYear` and `licence` to show them on the about page.
+1. Add the office address, hours, `foundedYear` and `licence` in `content/site.ts`. Each stays hidden until filled in.
 2. Have the client check every package, inclusion and promise. The routes and travel facts are
    researched drafts, and the service promises on the home and about pages need their agreement.
 3. Check `app/privacy/page.tsx` with the client.

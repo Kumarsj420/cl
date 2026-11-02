@@ -45,10 +45,11 @@ export function Footer() {
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-4">
         <div>
           <p className="font-display text-xl font-extrabold">{site.name}</p>
-          <p className="mt-3 text-ink-soft">{site.address}</p>
+          {site.address ? <p className="mt-3 text-ink-soft">{site.address}</p> : null}
           <p className="mt-3"><a className="text-link" href={`tel:${site.phoneHref}`}>{site.phone}</a></p>
+          {site.whatsapp ? <p className="mt-1"><a className="text-link" href={`https://wa.me/${site.whatsapp}`}>Chat on WhatsApp</a></p> : null}
           <p className="mt-1"><a className="text-link break-all" href={`mailto:${site.email}`}>{site.email}</a></p>
-          <p className="mt-3 text-ink-soft">{site.hours}</p>
+          {site.hours ? <p className="mt-3 text-ink-soft">{site.hours}</p> : null}
         </div>
         <nav aria-label="Destinations" className="md:col-span-2">
           <p className="font-display text-lg font-bold">{footerGroups[0].title}</p>

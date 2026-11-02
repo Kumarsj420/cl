@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Clock, Mail, MapPin, Phone } from "lucide-react";
+import { Clock, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { EnquiryForm } from "@/components/Enquiry";
 import { site } from "@/content/site";
 
@@ -12,15 +12,16 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   const rows = [
     { icon: Phone, label: "Call", value: site.phone, href: `tel:${site.phoneHref}` },
+    { icon: MessageCircle, label: "WhatsApp", value: site.whatsapp ? site.phone : "", href: `https://wa.me/${site.whatsapp}` },
     { icon: Mail, label: "Email", value: site.email, href: `mailto:${site.email}` },
     { icon: Clock, label: "Hours", value: site.hours },
     { icon: MapPin, label: "Office", value: site.address },
-  ];
+  ].filter((row) => row.value);
   return (
     <section className="mx-auto grid max-w-6xl gap-12 px-4 pt-8 pb-16 sm:px-6 md:grid-cols-2 md:pt-16 md:pb-24">
       <div>
         <h1 className="text-landing">Say hello</h1>
-        <p className="mt-5 max-w-md text-lg text-ink-soft">The quickest way is a phone call. If you would rather write, send the form and we will call you back.</p>
+        <p className="mt-5 max-w-md text-lg text-ink-soft">The quickest way is a phone call or a WhatsApp message. If you would rather write, send the form and we will call you back.</p>
         <dl className="mt-8 grid gap-5">
           {rows.map(({ icon: Icon, label, value, href }) => (
             <div key={label}>
