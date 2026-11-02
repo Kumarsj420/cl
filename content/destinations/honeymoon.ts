@@ -1,0 +1,45 @@
+import type { Destination } from "../types";
+
+export const honeymoon: Destination = {
+  slug: "honeymoon-packages",
+  name: "Honeymoon",
+  kind: "theme",
+  moods: ["honeymoon", "beach", "mountains"],
+  blurb: "Private time, in the place you picked",
+  metaTitle: "Honeymoon packages: Kashmir, Andaman, Kerala, Bali and more",
+  metaDescription: "Honeymoon packages in India and abroad, with private cabs, good rooms and quiet time together. Compare Kashmir, Kerala, Andaman, Goa and Bali. Call or enquire.",
+  heading: "Honeymoon packages",
+  intro: "Snow or sea? Houseboat or pool villa? Pick the mood and we will handle rooms, transfers and small surprises, leaving plenty of unplanned time for the two of you.",
+  heroPhoto: "kerala-alleppey",
+  stampPhoto: "andaman-radhanagar",
+  facts: [
+    { label: "Good trip length", value: "5 to 7 nights" },
+    { label: "Passport needed?", value: "Only for abroad" },
+    { label: "Book ahead", value: "2 to 3 months if possible" },
+    { label: "Tell us about", value: "Dates, budget, food" },
+  ],
+  placesTitle: "Choosing where to go",
+  places: [
+    { name: "Kashmir", href: "/kashmir-tour-packages", text: "Best for a slow houseboat stay and mountain views. Go from April to June or in the snow months." },
+    { name: "Kerala", href: "/kerala-tour-packages", text: "Tea hills and a private backwaters boat. Best between September and March." },
+    { name: "Andaman", href: "/andaman-tour-packages", text: "Beach time and snorkelling with no visa. Best between November and April." },
+    { name: "Himachal", href: "/himachal-tour-packages", text: "Close to Delhi and easy on budgets, with snow in the winter months." },
+    { name: "Goa", href: "/goa-tour-packages", text: "A short flight for a long weekend, or for a few quiet days in the south." },
+    { name: "Bali", href: "/bali-tour-packages", text: "Pool villas and rice terraces. Best from April to October." },
+  ],
+  packages: [
+    { title: "Houseboat and meadows in Kashmir", tier: "Premium", photo: "kashmir-dal", stops: [["Srinagar", 3], ["Gulmarg", 2], ["Pahalgam", 1]], includes: ["hotel", "meals", "cab", "activity"], highlights: ["Deluxe Dal Lake houseboat", "Private shikara at sunset", "Candlelit dinner"] },
+    { title: "Backwaters and tea in Kerala", tier: "Comfort", photo: "kerala-munnar", stops: [["Munnar", 2], ["Thekkady", 1], ["Alleppey", 1], ["Kovalam", 1]], includes: ["hotel", "houseboat", "meals", "cab"], highlights: ["Private houseboat night", "Valley-view plantation room", "Room decoration on arrival"] },
+    { title: "Beach and blue water in Andaman", tier: "Comfort", photo: "andaman-radhanagar", stops: [["Port Blair", 1], ["Havelock", 3], ["Neil", 1]], includes: ["hotel", "meals", "ferry", "activity"], highlights: ["Beach-side room", "Sunset at Radhanagar", "Snorkelling at Elephant Beach"] },
+    { title: "Snow and pine in Himachal", tier: "Budget", photo: "himachal-manali", stops: [["Shimla", 2], ["Manali", 3]], includes: ["hotel", "meals", "cab", "sightseeing"], highlights: ["Private cab all the way", "Solang Valley", "Honeymoon cake on arrival"] },
+    { title: "Lake palace romance in Udaipur", tier: "Premium", photo: "rajasthan-udaipur", stops: [["Udaipur", 3], ["Kumbhalgarh", 1]], includes: ["hotel", "meals", "cab", "activity"], highlights: ["Heritage lake-view room", "Sunset boat on Pichola", "Rooftop dinner"] },
+    { title: "Villas and rice terraces in Bali", tier: "Premium", photo: "bali-ubud", stops: [["Ubud", 3], ["Seminyak", 3]], includes: ["hotel", "meals", "cab", "activity"], highlights: ["Private pool villa", "Floating breakfast", "Couple's massage"] },
+  ],
+  faqs: [
+    { q: "How early should we book?", a: "Two to three months ahead is ideal, and more during wedding season peaks from November to February, when good rooms go fast. Short notice is still possible, but with fewer choices." },
+    { q: "What do you include for couples?", a: "Usually a private cab, room decoration and one special dinner, which vary by hotel. Your written plan lists exactly what is included, so nothing is assumed." },
+    { q: "Can we change our dates after booking?", a: "Often yes, subject to hotel and airline rules. Date change rules are listed in your quote before you pay anything." },
+    { q: "Where should we go in December or January?", a: "For snow, go to Kashmir or Himachal. For warm beaches, go to Andaman, Goa or Kerala. Thailand also has good weather then." },
+  ],
+  related: ["kashmir-tour-packages", "bali-tour-packages", "kerala-tour-packages", "andaman-tour-packages"],
+};

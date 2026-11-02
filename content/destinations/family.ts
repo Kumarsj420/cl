@@ -1,0 +1,45 @@
+import type { Destination } from "../types";
+
+export const family: Destination = {
+  slug: "family-holiday-packages",
+  name: "Family holidays",
+  kind: "theme",
+  moods: ["family", "beach", "mountains"],
+  blurb: "Short drives, good food, room for everyone",
+  metaTitle: "Family holiday packages: India and abroad, with kids and elders",
+  metaDescription: "Family holiday packages with kind pacing for children and grandparents. Himachal, Kerala, Rajasthan, Andaman, Dubai and Thailand. Call or enquire for a price.",
+  heading: "Family holiday packages",
+  intro: "Later starts, shorter drives, connecting rooms and food everyone will actually eat. We plan these trips around the youngest and the oldest person coming along, so nobody spends the holiday tired.",
+  heroPhoto: "rajasthan-amber",
+  stampPhoto: "himachal-khajjiar",
+  facts: [
+    { label: "Good trip length", value: "4 to 7 nights" },
+    { label: "Popular dates", value: "School holidays" },
+    { label: "Book ahead", value: "2 to 4 months for May and Diwali" },
+    { label: "Tell us about", value: "Ages, food, mobility" },
+  ],
+  placesTitle: "Choosing where to go",
+  places: [
+    { name: "Himachal", href: "/himachal-tour-packages", text: "A May and June favourite, when the plains get too hot. Easy snow from March onwards high up." },
+    { name: "Uttarakhand", href: "/uttarakhand-tour-packages", text: "Nainital and Corbett are close to Delhi, so children spend less time in the car." },
+    { name: "Kerala", href: "/kerala-tour-packages", text: "A houseboat night is hard to beat at any age. Best between September and March." },
+    { name: "Rajasthan", href: "/rajasthan-tour-packages", text: "Forts, camels and tigers feel like a storybook. Go between October and March." },
+    { name: "Dubai", href: "/dubai-tour-packages", text: "Water parks, safe streets and a short flight. Best between November and March." },
+    { name: "Thailand", href: "/thailand-tour-packages", text: "Beaches, aquariums and Indian food on hand. A good choice for a first family trip abroad." },
+  ],
+  packages: [
+    { title: "Himachal summer with the family", tier: "Comfort", photo: "himachal-shimla", stops: [["Shimla", 2], ["Manali", 4]], includes: ["hotel", "meals", "cab", "sightseeing"], highlights: ["Short daily driving stretches", "Solang Valley fun", "Family rooms"] },
+    { title: "Corbett and Nainital", tier: "Comfort", photo: "uttarakhand-corbett", stops: [["Jim Corbett", 2], ["Nainital", 2]], includes: ["hotel", "meals", "cab", "activity"], highlights: ["Morning jeep safari", "Resort with pool", "Boating on the lake"] },
+    { title: "Kerala for all ages", tier: "Comfort", photo: "kerala-munnar", stops: [["Munnar", 2], ["Alleppey", 1], ["Kochi", 2]], includes: ["hotel", "houseboat", "meals", "cab"], highlights: ["Two-bedroom houseboat", "Tea museum and easy walks", "Fort Kochi sights"] },
+    { title: "Rajasthan with kids", tier: "Comfort", photo: "rajasthan-amber", stops: [["Jaipur", 2], ["Ranthambore", 2], ["Udaipur", 2]], includes: ["hotel", "meals", "cab", "activity"], highlights: ["Amber Fort and puppet show", "Tiger safari", "Lake Pichola boat"] },
+    { title: "Andaman beach time", tier: "Comfort", photo: "andaman-shore", stops: [["Port Blair", 3], ["Havelock", 3]], includes: ["hotel", "meals", "cab", "ferry"], highlights: ["Glass-bottom boats", "Radhanagar Beach", "Ross Island's deer"] },
+    { title: "Dubai with the whole family", tier: "Comfort", photo: "dubai-desert", stops: [["Dubai", 5]], includes: ["hotel", "meals", "cab", "activity", "visa"], highlights: ["Water park day", "Desert safari", "Burj Khalifa visit"] },
+  ],
+  faqs: [
+    { q: "Can you plan for grandparents with limited mobility?", a: "Yes. Tell us what is hard for them, such as stairs, long walks or very high altitude. We will choose hotels with lifts and ground-floor rooms where possible, and avoid long drives." },
+    { q: "What about children's food?", a: "Hotels can usually provide simple meals. If there are allergies or strict vegetarian or Jain needs, tell us early and we will pick suitable hotels and write it into the plan." },
+    { q: "How are children charged?", a: "This depends on age and on the hotel's rules. Infants often travel free and older children may need their own bed. Your quote will show this line by line." },
+    { q: "Which trips suit very young children?", a: "Places with short drives, gentle weather and good hospitals nearby. Kerala, Goa, Nainital, Dubai and Thailand all work well. We advise against high-altitude Ladakh with infants." },
+  ],
+  related: ["uttarakhand-tour-packages", "rajasthan-tour-packages", "dubai-tour-packages", "thailand-tour-packages"],
+};

@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: var(--font-bricolage), system-ui, sans-serif;
+  --font-sans: var(--font-figtree), system-ui, sans-serif;
+
+  --color-ink: #12324a;
+  --color-ink-soft: #3f5a6f;
+  --color-field: #6b8496;
+  --color-line: #cfdde6;
+  --color-paper: #ffffff;
+  --color-sky-50: #f0f8fd;
+  --color-sky-100: #d9eef9;
+  --color-sea: #0b6498;
+  --color-sea-deep: #084c75;
+  --color-yolk: #ffcb3d;
+  --color-yolk-deep: #f7b90f;
+  --color-mint: #d9f4e4;
+  --color-mint-ink: #0d5f3d;
+  --color-blush: #ffe5de;
+  --color-danger: #b5341f;
+
+  --radius-sm: 0.375rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1.25rem;
+  --shadow-lift: 0 10px 24px -14px rgb(18 50 74 / 0.45);
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@layer base {
+  html { scroll-behavior: smooth; scroll-padding-top: 1rem; }
+  html:has(dialog[open]) { overflow: hidden; }
+  body { background: var(--color-paper); color: var(--color-ink); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
+  h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; letter-spacing: -0.02em; line-height: 1.08; }
+  p { text-wrap: pretty; }
+  :focus-visible { outline: 3px solid var(--color-sea); outline-offset: 2px; border-radius: var(--radius-sm); }
+  ::selection { background: var(--color-yolk); }
+}
+
+@layer components {
+  /* Type scale */
+  .text-hero { font-size: clamp(3rem, 2rem + 6vw, 6.25rem); font-weight: 800; line-height: 0.98; letter-spacing: -0.035em; }
+  .text-landing { font-size: clamp(2.25rem, 1.6rem + 3.2vw, 4.25rem); font-weight: 800; line-height: 1.02; letter-spacing: -0.03em; }
+  .text-section { font-size: clamp(1.75rem, 1.4rem + 1.7vw, 2.75rem); font-weight: 700; }
+
+  /* Buttons: yolk is the one call-to-action colour; ink text keeps it above 9:1. */
+  .btn { display: inline-flex; min-height: 2.75rem; align-items: center; justify-content: center; gap: 0.5rem; border-radius: 999px; padding: 0.5rem 1.25rem; font-weight: 700; line-height: 1.2; transition: transform 160ms var(--ease-bounce), background-color 160ms; cursor: pointer; touch-action: manipulation; }
+  .btn:active { transform: scale(0.97); }
+  .btn-primary { background: var(--color-yolk); color: var(--color-ink); }
+  .btn-primary:hover { background: var(--color-yolk-deep); }
+  .btn-outline { box-shadow: inset 0 0 0 2px var(--color-ink); color: var(--color-ink); background: transparent; }
+  .btn-outline:hover { background: var(--color-sky-100); }
+  .btn[aria-busy="true"] { cursor: progress; opacity: 0.8; }
+  .text-link { color: var(--color-sea); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+  .text-link:hover { color: var(--color-sea-deep); }
+
+  /* Postage stamp: four intersected masks, one row of holes per edge. The parent carries
+     the shadow, because a mask would clip one set on the stamp itself. */
+  .stamp-shadow { filter: drop-shadow(0 6px 10px rgb(18 50 74 / 0.18)); transition: transform 240ms var(--ease-bounce); }
+  .stamp {
+    --hole: 5px;
+    --gap: 16px;
+    background: var(--color-paper);
+    padding: 12px;
+    mask:
+      radial-gradient(circle var(--hole) at 50% 0, #0000 97%, #000) 0 0 / var(--gap) 100% round,
+      radial-gradient(circle var(--hole) at 50% 100%, #0000 97%, #000) 0 0 / var(--gap) 100% round,
+      radial-gradient(circle var(--hole) at 0 50%, #0000 97%, #000) 0 0 / 100% var(--gap) round,
+      radial-gradient(circle var(--hole) at 100% 50%, #0000 97%, #000) 0 0 / 100% var(--gap) round;
+    mask-composite: intersect;
+  }
+  .tilt-a { transform: rotate(-2deg); }
+  .tilt-b { transform: rotate(1.5deg); }
+  .tilt-c { transform: rotate(-1deg); }
+  .tilt-d { transform: rotate(2.25deg); }
+  a:hover > .stamp-shadow, a:focus-visible > .stamp-shadow, .stamp-shadow.straighten:hover { transform: rotate(0) translateY(-4px) scale(1.02); }
+
+  /* Ticket: a torn stub divides the trip from the price and buttons. */
+  .ticket { position: relative; display: flex; flex-direction: column; border-radius: var(--radius-lg); background: var(--color-paper); box-shadow: 0 0 0 1px var(--color-line); }
+  .ticket-tear { position: relative; border-top: 2px dashed var(--color-line); }
+  .ticket-tear::before, .ticket-tear::after { content: ""; position: absolute; top: -0.6875rem; width: 1.25rem; height: 1.25rem; border-radius: 50%; background: var(--ticket-bg, var(--color-sky-50)); box-shadow: inset 0 0 0 1px var(--color-line); }
+  .ticket-tear::before { left: -0.625rem; clip-path: inset(0 0 0 50%); }
+  .ticket-tear::after { right: -0.625rem; clip-path: inset(0 50% 0 0); }
+
+  .ticket-on-paper { --ticket-bg: var(--color-paper); }
+
+  /* Dialog: a sheet on phones, centred from the small breakpoint */
+  dialog.enquiry { margin: auto auto 0; width: 100%; max-width: none; max-height: 92dvh; border-radius: var(--radius-lg) var(--radius-lg) 0 0; background: var(--color-paper); color: var(--color-ink); overflow-y: auto; overscroll-behavior: contain; }
+  dialog.enquiry::backdrop { background: rgb(18 50 74 / 0.55); }
+  dialog.enquiry[open] { animation: sheet-up 240ms var(--ease-bounce); }
+  @media (min-width: 40rem) {
+    dialog.enquiry { margin: auto; width: 32rem; max-height: 90dvh; border-radius: var(--radius-lg); }
+  }
+  @keyframes sheet-up { from { transform: translateY(1.5rem); opacity: 0; } to { transform: none; opacity: 1; } }
+
+  .mobile-actions { padding-bottom: max(0.5rem, env(safe-area-inset-bottom)); }
+
+  /* Flight path drawn once when the hero loads */
+  .flight-path { stroke-dasharray: 2 10; }
+  .plane { offset-path: path("M10 170 C 120 40, 260 40, 390 110"); offset-rotate: auto; animation: fly 2.4s ease-out both; }
+  @keyframes fly { from { offset-distance: 0%; } to { offset-distance: 100%; } }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .plane { offset-distance: 100%; }
+}
