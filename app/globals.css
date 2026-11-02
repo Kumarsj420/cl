@@ -14,11 +14,15 @@
   --color-sky-100: #e3f0f8;
   --color-sea: #0b6498;
   --color-sea-deep: #084c75;
-  /* Light orange accent. Fills take ink text (6.7:1); white text on it would fail contrast.
-     accent-ink is the orange for text on white or cream (5.2:1 and 4.9:1). */
-  --color-accent: #ffa24d;
-  --color-accent-hover: #ff9433;
-  --color-accent-ink: #c2410c;
+  /* Accent is Tailwind rose-500 with white text, as the client asked. White on rose-500 is
+     3.75:1, which passes WCAG AA only for large or bold text (about 19px bold and up) and icons.
+     accent-ink (rose-700) is for rose text on white or cream; accent-light (rose-400) for rose
+     text on navy or over photos. */
+  --color-accent: oklch(64.5% 0.246 16.439);
+  --color-accent-hover: oklch(58.6% 0.253 17.585);
+  --color-accent-ink: oklch(51.4% 0.222 16.935);
+  --color-accent-light: oklch(71.2% 0.194 13.428);
+  --color-on-accent: #ffffff;
   --color-whatsapp: #0f7a3f;
   --color-whatsapp-deep: #0b5f31;
   --color-mint: #d9f4e4;
@@ -40,7 +44,7 @@
   h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; letter-spacing: -0.015em; line-height: 1.15; }
   p { text-wrap: pretty; }
   :focus-visible { outline: 3px solid var(--color-sea); outline-offset: 2px; border-radius: var(--radius-sm); }
-  ::selection { background: var(--color-accent); }
+  ::selection { background: var(--color-accent); color: var(--color-on-accent); }
 }
 
 @layer components {
@@ -48,11 +52,11 @@
   .text-section { font-size: clamp(1.625rem, 1.3rem + 1.5vw, 2.5rem); font-weight: 700; }
   /* A handwritten line above a few home page headings, as on the reference sites. Decorative, so it stays short. */
   .kicker { font-family: var(--font-script); font-size: 1.75rem; line-height: 1; color: var(--color-accent-ink); }
-  .on-photo .kicker { color: var(--color-accent); }
+  .on-photo .kicker { color: var(--color-accent-light); }
 
   .btn { display: inline-flex; min-height: 2.75rem; align-items: center; justify-content: center; gap: 0.5rem; border-radius: var(--radius-sm); padding: 0.5rem 1.25rem; font-weight: 600; line-height: 1.2; transition: transform 160ms var(--ease-bounce), background-color 160ms; cursor: pointer; touch-action: manipulation; }
   .btn:active { transform: scale(0.97); }
-  .btn-primary { background: var(--color-accent); color: var(--color-ink); }
+  .btn-primary { background: var(--color-accent); color: var(--color-on-accent); }
   .btn-primary:hover { background: var(--color-accent-hover); }
   .btn-whatsapp { background: var(--color-whatsapp); color: #fff; }
   .btn-whatsapp:hover { background: var(--color-whatsapp-deep); }

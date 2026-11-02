@@ -36,7 +36,7 @@ export function PackageCard({ pkg, destination, sizes }: { pkg: TripPackage; des
       <div className="relative aspect-3/2 bg-sky-100">
         <Image src={photo.src} alt={photo.alt} fill sizes={sizes} className="object-cover" />
       </div>
-      <p className="absolute top-3 left-3 rounded-sm bg-accent px-2.5 py-1 font-display text-sm font-semibold">
+      <p className="absolute top-3 left-3 rounded-sm bg-accent px-2.5 py-1 font-display text-on-accent text-sm font-semibold">
         <span aria-hidden="true">{durationLabel(pkg)}</span>
         <span className="sr-only">{nights} nights, {nights + 1} days</span>
       </p>

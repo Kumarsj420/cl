@@ -15,7 +15,7 @@ export function DestinationCard({ destination, sizes }: { destination: Destinati
       <span className="absolute inset-x-0 bottom-0 p-4 text-paper">
         <span className="block font-display text-xl font-semibold leading-tight">{destination.name}</span>
         <span className="mt-1 block text-sm">{destination.blurb}</span>
-        <span className="mt-2 inline-block rounded-sm bg-accent px-2 py-0.5 text-sm font-semibold text-ink">{count} {count === 1 ? "package" : "packages"}</span>
+        <span className="mt-2 inline-block rounded-sm bg-accent px-2 py-0.5 text-sm font-semibold text-on-accent">{count} {count === 1 ? "package" : "packages"}</span>
       </span>
     </Link>
   );

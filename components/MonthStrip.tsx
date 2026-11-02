@@ -4,7 +4,7 @@ const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "
 const fullMonths = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
 const style: Record<MonthRating, { label: string; cell: string; mark: string }> = {
-  best: { label: "Best", cell: "bg-accent", mark: "●" },
+  best: { label: "Best", cell: "bg-accent text-on-accent", mark: "●" },
   okay: { label: "Okay", cell: "bg-paper ring-1 ring-inset ring-accent-hover", mark: "◐" },
   avoid: { label: "Not ideal", cell: "bg-cream text-ink-soft", mark: "○" },
 };

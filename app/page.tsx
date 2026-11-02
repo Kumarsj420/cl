@@ -88,7 +88,7 @@ export default function HomePage() {
           <ul className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {services.map(({ icon: Icon, title, text }) => (
               <li key={title} className="card bg-cream p-6">
-                <span className="inline-flex size-12 items-center justify-center rounded-full bg-accent"><Icon aria-hidden="true" className="size-6" /></span>
+                <span className="inline-flex size-12 items-center justify-center rounded-full bg-accent text-on-accent"><Icon aria-hidden="true" className="size-6" /></span>
                 <h3 className="mt-4 text-lg font-semibold">{title}</h3>
                 <p className="mt-1 text-ink-soft">{text}</p>
               </li>

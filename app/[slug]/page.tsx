@@ -148,7 +148,7 @@ export default async function DestinationPage({ params }: Props) {
           <ol className="mt-8 grid gap-8 md:grid-cols-3">
             {steps.map((step, index) => (
               <li key={step.title}>
-                <span aria-hidden="true" className="inline-flex size-10 items-center justify-center rounded-full bg-accent font-display font-semibold">{index + 1}</span>
+                <span aria-hidden="true" className="inline-flex size-10 items-center justify-center rounded-full bg-accent font-display text-on-accent font-semibold">{index + 1}</span>
                 <h3 className="mt-3 text-lg font-semibold">{step.title}</h3>
                 <p className="mt-1 text-ink-soft">{step.text}</p>
               </li>
