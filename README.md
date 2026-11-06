@@ -48,9 +48,14 @@ then connect GitHub or upload a ZIP of this folder without `node_modules` and `.
 | --- | --- |
 | Application type | `next` |
 | Node.js version | 22 |
-| Build script | `build` |
+| Build script | `build` (runs `next build --webpack`) |
 | Output directory | `.next` |
 | Entry file | Leave as it is (ignored for Next.js) |
+
+The build uses webpack, not Turbopack. Turbopack runs PostCSS in a separate Node process, and
+that process failed on Hostinger's build servers. Tailwind, PostCSS and TypeScript are in
+`dependencies` (not `devDependencies`) so they are installed even when the host skips dev
+packages.
 
 Environment variables are listed in `.env.example`:
 
