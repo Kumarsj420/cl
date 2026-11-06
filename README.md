@@ -1,4 +1,4 @@
-# Bhart Tour & Travels website
+# Bharti Tour & Travel website
 
 Himachal travel site in Next.js: a home page, about, contact and 14 landing pages (11 places and
 3 trip types). Every page has an enquiry form in the hero, and each package card has Enquire,
@@ -32,7 +32,7 @@ shows "Price on request".
 
 ## Before launch
 
-1. Add the office address, hours, `foundedYear` and `licence` in `content/site.ts`. Each stays hidden until filled in.
+1. Confirm the address spelling ("Daria" was written "dryai" on the logo) and add hours, `foundedYear` and `licence` in `content/site.ts`. Empty fields stay hidden.
 2. Have the client check every package, inclusion and promise. The routes and travel facts are
    researched drafts. The service list and the promises on the home and about pages need their
    agreement, because they describe what the client will do.

@@ -3,15 +3,15 @@
  * Optional facts stay hidden until they are filled in, so nothing made up can appear on the site.
  */
 export const site = {
-  name: "Bhart Tour & Travels",
+  name: "Bharti Tour & Travel",
   tagline: "Himachal holidays planned by people you can call",
   phone: "+91 86298 75195",
   phoneHref: "+918629875195",
   // WhatsApp chat link, digits only with country code. Leave empty to hide it.
   whatsapp: "918629875195",
   email: "bansisir7@gmail.com",
-  // Address and hours stay hidden until they are filled in.
-  address: "",
+  // Hours stay hidden until they are filled in.
+  address: "Shop No. 5, Gali No. 3, Daria, Chandigarh",
   hours: "",
   // Shown on the about page only when set.
   foundedYear: "",

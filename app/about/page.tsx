@@ -32,7 +32,7 @@ export default function AboutPage() {
           <p className="kicker">About us</p>
           <h1 className="text-hero mt-2">We plan Himachal holidays, one family at a time</h1>
           <p className="mt-6 max-w-xl text-lg text-ink-soft">
-            {site.name} is a tour and travel company for Himachal Pradesh. We build trips to Shimla, Manali, Dharamshala, Spiti and the quieter valleys for couples, families and groups of friends. You tell us what matters, and we do the comparing, booking and chasing.
+            {site.name} is a tour and travel company in Chandigarh, planning holidays across Himachal Pradesh. We build trips to Shimla, Manali, Dharamshala, Spiti and the quieter valleys for couples, families and groups of friends. You tell us what matters, and we do the comparing, booking and chasing.
           </p>
         </div>
         <div className="relative aspect-4/3 overflow-hidden rounded-md shadow-card">

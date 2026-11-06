@@ -1,5 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
-import { Mail, Phone, Send } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 import { EnquiryButton } from "./Enquiry";
 import { WhatsAppIcon } from "./WhatsAppIcon";
 import { site, whatsappLink } from "@/content/site";
@@ -40,9 +41,8 @@ export function Header() {
     <header className="border-b border-line bg-paper">
       <TopBar />
       <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-x-6 px-4 py-1 sm:px-6 lg:flex-nowrap lg:py-2">
-        <Link href="/" className="flex min-h-11 items-center gap-2 font-display text-lg font-bold">
-          <Send aria-hidden="true" className="size-5 -rotate-12 fill-accent text-ink" />
-          {site.name}
+        <Link href="/" className="flex min-h-11 items-center py-1">
+          <Image src="/logo.png" alt={site.name} width={684} height={174} priority className="h-10 w-auto lg:h-12" />
         </Link>
         <EnquiryButton className="btn btn-primary order-2 hidden lg:order-3 lg:inline-flex">Enquire now</EnquiryButton>
         <nav aria-label="Main" className="order-3 -mx-4 w-[calc(100%+2rem)] overflow-x-auto px-1 lg:order-2 lg:mx-0 lg:ml-auto lg:w-auto lg:px-0">
@@ -71,7 +71,7 @@ export function HelpStrip({ title = "Planning a Himachal trip?", destination }: 
           <p className="mt-1">Tell us your dates and who is coming. We will call back with a plan and a price.</p>
         </div>
         <a href={`tel:${site.phoneHref}`} className="flex min-h-11 items-center gap-3 font-semibold hover:underline">
-          <span className="inline-flex size-11 shrink-0 items-center justify-center rounded-full bg-ink text-paper"><Phone aria-hidden="true" className="size-5" /></span>
+          <span className="inline-flex size-11 shrink-0 items-center justify-center rounded-full bg-paper text-accent"><Phone aria-hidden="true" className="size-5" /></span>
           <span><span className="block text-sm font-normal">Call us</span>{site.phone}</span>
         </a>
         {site.whatsapp ? (
@@ -90,7 +90,7 @@ export function Footer() {
   const places = destinations.filter((d) => d.kind === "place");
   const themes = destinations.filter((d) => d.kind === "theme");
   return (
-    <footer className="bg-ink pb-24 text-paper lg:pb-0">
+    <footer className="border-t-4 border-gold bg-night pb-24 text-paper lg:pb-0">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-4">
         <div>
           <p className="font-display text-lg font-bold">{site.name}</p>
